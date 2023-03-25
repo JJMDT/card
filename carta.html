@@ -13,11 +13,70 @@
 </head>
 <body>
     <main>
+        
         <div class="card-container">
+            <section>
+                <input type="text" id="text-name" placeholder="ingrese el nombre"> <br>
+
+                <input type="file" id="imgCard" placeholder="imagen de la carta"> <br>
+
+                <input type="text" id="text-1"placeholder="escribi el tipo de carta"> <br>
+
+                <input id="text-2" type="text" placeholder="descripcion de esta carta">
+                 <br>
+
+                <input type="text" id="text-atk" placeholder="ingrese el valor de ATK"> <br>
+                
+                <input type="text" id="text-def" placeholder="ingrese el valor de DEF"> <br>
+                
+                <input type="text" id="text-attrib" placeholder="ingrese un atributos"> <br>
+                
+                <input type="text" id="nrocard" placeholder="ingrese nro de carta"><br>
+
+                <input type="button" id="btn-text" onclick="insertar()" value="mandar" >
+                <script>
+                   function insertar() {
+
+                        let newName=document.getElementById("text-name").value;
+                        let name=document.getElementById("idname");
+                        name.innerHTML=newName.toUpperCase();
+
+                        let newImgCard=document.getElementById("imgCard").value;
+                        document.getElementById("idImgCard").innerHTML=newImgCard;
+
+                        let newTypeCard="["+document.getElementById("text-1").value +"]"; 
+                       let typeCard=document.getElementById("tipo");
+                       typeCard.innerHTML =newTypeCard.toUpperCase();
+
+                       
+        
+                        let newAtk="ATK/"+document.getElementById("text-atk").value;
+                    //    let atk=document.getElementById("idatk");
+                    //    atk.innerHTML=newAtk;
+                        document.getElementById("idatk").innerHTML=newAtk;
+
+                        let newDef="DEF/"+document.getElementById("text-def").value;
+                       let def=document.getElementById("iddef");
+                       def.innerHTML=newDef;
+
+                       let newDescrip=document.getElementById("text-2").value;
+                       let descripcion=document.getElementById("idp");
+                       descripcion.innerHTML=newDescrip;
+
+                       let newAttribute=document.getElementById("text-attrib").value;
+                       let attribute=document.getElementById("idattribute");
+                       attribute.innerHTML=newAttribute;
+
+                       let newNro=document.getElementById("nrocard").value;
+                       document.getElementById("idcard").innerHTML="CARD NRO: "+newNro;
+                   }
+                </script>
+                </section>
+
             <div class="card">
                 <div class="titulo-card">
-                    <p> SUMMONED SKULL </p> 
-                    <i class="fa-solid fa-skull"></i>
+                    <p id="idname"> SUMMONED SKULL </p> 
+                    <!-- <i class="fa-solid fa-skull"></i> -->
                 </div>
                 <div class="estrellas">
                     <i class="fa-solid fa-star"></i>
@@ -28,27 +87,28 @@
                     <i class="fa-regular fa-star"></i>
                 </div>
                 <div class="img-card">
-                    <img src="img/summ.jfif" alt="">
+                    <img src="img/summ.jfif" alt="" id="idImgCard">
                 </div>
             
                 <div class="info">
-                    <h3>[DEMONIO]</h3>
-                    <p> Un demonio con poderes oscuros para confundir al enemigo. <br> Entre los monstruos de Tipo Demonio, este monstruo alardea de considerable fuerza..</p> <br>
-                    <p class="descripcion">(Esta carta se trata siempre como un carta "archidemonio".)</p>
+                    <h3 id="tipo">[DEMONIO]</h3>
+                    <p id="idp"> Un demonio con poderes oscuros para confundir al enemigo. <br> Entre los monstruos de Tipo Demonio, este monstruo alardea de considerable fuerza..</p> <br>
+                    <p class="descripcion" id="idattribute">(Esta carta se trata siempre como un carta "archidemonio".)</p>
                     <div class="separador"></div>
                     <div class="at-card">
-                        <i class="fa-solid fa-bolt"> ATK/2500</i>                 
-                        <i class="fa-solid fa-shield-halved"> DEF/1200</i> 
+                        <i class="fa-solid fa-bolt atk" id="idatk"> ATK/2500</i>                 
+                        <i class="fa-solid fa-shield-halved" id="iddef"> DEF/1200</i> 
                      </div> 
                 </div>
                     
                      
                     
-                <div class="nro-cards">
-                    <p> CARD NRO: 92</p>
+                <div class="nro-cards" >
+                    <p id="idcard"> CARD NRO: 92</p>
                 </div>
             </div>
         </div>
+        
     </main>
  
     
