@@ -8,103 +8,84 @@
     <link rel="stylesheet" href="card.css">
     
     <script src="https://kit.fontawesome.com/6a5a1b02b4.js" crossorigin="anonymous"></script>
+    <script src="funcion.js"></script>
     
 
 </head>
-<body>
+<body >
     <main>
         
         <div class="card-container">
-            <section>
-                <input type="text" id="text-name" placeholder="ingrese el nombre"> <br>
-
-                <input type="file" id="imgCard" placeholder="imagen de la carta"> <br>
-
-                <input type="text" id="text-1"placeholder="escribi el tipo de carta"> <br>
-
-                <input id="text-2" type="text" placeholder="descripcion de esta carta">
+        <div class="container-formulario">
+            <section class="seccion-formulario">
+               <h2> Crea tu carta</h2>
+            <input type="text"  id="text-name" placeholder="Nombre" > <br>
+                
+                <!-- <input type="text" id="text-1"placeholder="Tipo"> -->
+                <select name="select" id="text-1" >
+                    <option value="" hidden>SELECCION EL TIPO</option>
+                    <option value="DRAGON">DRAGON</option>
+                    <option value="HECHIZERO">HECHIZERO</option>
+                    <option value="ZOMBIE">ZOMBIE</option>
+                    <option value="BESTIA">BESTIA</option>
+                    <option value="GUERRERO">GUERRERO</option>
+                </select>
+                <br>
+                
+<!-- 
+                <input id="text-2" type="text" placeholder="Descripcion"> -->
+                <textarea name="texto" id="text-2" cols="30" rows="7" maxlength="150" placeholder="Descripcion"></textarea>
                  <br>
 
-                <input type="text" id="text-atk" placeholder="ingrese el valor de ATK"> <br>
+                 <!-- <input type="text" id="text-attrib" placeholder="ingrese un atributos"> <br> -->
+                 
+                <input type="number" id="text-atk" placeholder="Valor de ATK"> <br>
                 
-                <input type="text" id="text-def" placeholder="ingrese el valor de DEF"> <br>
+                <input type="number" id="text-def" placeholder="Valor de DEF"> <br>
                 
-                <input type="text" id="text-attrib" placeholder="ingrese un atributos"> <br>
                 
-                <input type="text" id="nrocard" placeholder="ingrese nro de carta"><br>
-
-                <input type="button" id="btn-text" onclick="insertar()" value="mandar" >
-                <script>
-                   function insertar() {
-
-                        let newName=document.getElementById("text-name").value;
-                        let name=document.getElementById("idname");
-                        name.innerHTML=newName.toUpperCase();
-
-                        let newImgCard=document.getElementById("imgCard").value;
-                        document.getElementById("idImgCard").innerHTML=newImgCard;
-
-                        let newTypeCard="["+document.getElementById("text-1").value +"]"; 
-                       let typeCard=document.getElementById("tipo");
-                       typeCard.innerHTML =newTypeCard.toUpperCase();
-
-                       
-        
-                        let newAtk="ATK/"+document.getElementById("text-atk").value;
-                    //    let atk=document.getElementById("idatk");
-                    //    atk.innerHTML=newAtk;
-                        document.getElementById("idatk").innerHTML=newAtk;
-
-                        let newDef="DEF/"+document.getElementById("text-def").value;
-                       let def=document.getElementById("iddef");
-                       def.innerHTML=newDef;
-
-                       let newDescrip=document.getElementById("text-2").value;
-                       let descripcion=document.getElementById("idp");
-                       descripcion.innerHTML=newDescrip;
-
-                       let newAttribute=document.getElementById("text-attrib").value;
-                       let attribute=document.getElementById("idattribute");
-                       attribute.innerHTML=newAttribute;
-
-                       let newNro=document.getElementById("nrocard").value;
-                       document.getElementById("idcard").innerHTML="CARD NRO: "+newNro;
-                   }
-                </script>
-                </section>
-
+                <input type="num" id="nrocard" placeholder="Nro de carta"><br>
+                
+                <button id="btn-text" onclick="todo()" value="GENERAR"> GENERAR </button>
+                <!-- <input type="button" id="btn-text" onclick="todo()" value=" GENERAR " > -->
+                <br>
+                    <p id="segundoPaso">Seleccione la imagen</p> <br>
+                    <input class="Img-Card-Fondo" type="file" id="imgCard" name="imgCard"> <br> <br>
+            </section>
+        </div>
+                
             <div class="card">
                 <div class="titulo-card">
-                    <p id="idname"> SUMMONED SKULL </p> 
+                    <p id="idname"> NOMBRE </p> 
                     <!-- <i class="fa-solid fa-skull"></i> -->
                 </div>
-                <div class="estrellas">
+                 <div class="estrellas">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
+                    </i>
+                </div> 
                 <div class="img-card">
-                    <img src="img/summ.jfif" alt="" id="idImgCard">
+                    <img src="img/img.jpg" alt="" id="idImgCard" >
                 </div>
             
                 <div class="info">
-                    <h3 id="tipo">[DEMONIO]</h3>
-                    <p id="idp"> Un demonio con poderes oscuros para confundir al enemigo. <br> Entre los monstruos de Tipo Demonio, este monstruo alardea de considerable fuerza..</p> <br>
-                    <p class="descripcion" id="idattribute">(Esta carta se trata siempre como un carta "archidemonio".)</p>
-                    <div class="separador"></div>
+                    <h3 id="tipo">[TIPO DE CARTA]</h3>
+                    <p id="idp"> descripcion de carta <br>
+                        <!-- <p class="descripcion" id="idattribute">atributo</p> -->
+                        <div class="separador"></div> 
                     <div class="at-card">
-                        <i class="fa-solid fa-bolt atk" id="idatk"> ATK/2500</i>                 
-                        <i class="fa-solid fa-shield-halved" id="iddef"> DEF/1200</i> 
-                     </div> 
-                </div>
+                        <i class="fa-solid fa-bolt atk" id="idatk"> ATK/</i>                 
+                        <i class="fa-solid fa-shield-halved" id="iddef"> DEF/</i> 
+                    </div> 
                     
-                     
+                </div>
+                
+                
                     
                 <div class="nro-cards" >
-                    <p id="idcard"> CARD NRO: 92</p>
+                    <p id="idcard"> CARD NRO: </p>
                 </div>
             </div>
         </div>

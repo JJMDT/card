@@ -5,12 +5,15 @@
 
 .card-container{
     display:flex;
-    justify-content: space-around;
-    padding: 30px 0px;
+    justify-content: center;
+    padding: 5px 50px;
+    
     
 }
 .card{
-    width: 400px;
+    margin: 0px 50px;
+
+    width: 300px;
     height: 100%;
     box-sizing: border-box;
     border: 10px solid;
@@ -33,7 +36,7 @@
 
 .titulo-card{
     box-sizing: border-box;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     display: flex;
     justify-content: space-evenly;
@@ -41,14 +44,16 @@
     margin: 10px;
     border: black 5px transparent;
     box-shadow: black 0px 2px 10px;
-
+    height: 44px;
+    width: 260px;
     border-radius: 0px;
-color: rgb(223, 220, 220);
+    color: rgb(223, 220, 220);
+
 }
 .titulo-card p{
     box-sizing: border-box;
-    width: 90%;
-    padding: 5px;    
+    width: 260px;
+    padding: 5px;   
     
 }
 .img-card{
@@ -59,25 +64,28 @@ color: rgb(223, 220, 220);
 .estrellas{
     display: flex;
     justify-content: flex-start;
-    font-size: 30px;
-    margin: 0px 25px;
+    font-size: 25px;
+    margin: 0px 15px;
     margin-bottom: 10px;
-    color: #ffea00e3
+    color: #ffe206
 }
 
 
 .img-card img{
     width: 80%;
+    height: 220px;
     padding: 0px 0px;
     box-shadow: black 0px 0px 20px;
-     border: rgb(248, 247, 247) 10px outset;
+    border: rgb(248, 247, 247) 10px outset;
     border-image: radial-gradient( transparent,rgb(0, 0, 0)) 1; 
 }
 .info {
     border: 3px solid;
     border-image: radial-gradient(rgb(255, 255, 255), rgb(63, 63, 63)) 1;
-
+    height: 200px;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
     
@@ -107,7 +115,9 @@ color: rgb(223, 220, 220);
     box-sizing: border-box;
     margin: 15px 10px;
     display: flex;
+    height: 100%;
     justify-content: flex-end;
+    align-items: flex-end;
 }
 .at-card i{
     color: black;
@@ -118,6 +128,7 @@ color: rgb(223, 220, 220);
     box-sizing: border-box;
     display: flex;
     justify-content: flex-center; 
+    height: 21px;
 }
 .nro-cards p{
     margin-bottom:  10px;
@@ -129,5 +140,54 @@ color: rgb(223, 220, 220);
 .separador{
     border-top: 2px solid black;
     margin: 0 12px;
+    display: flex;
+
 }
 
+#segundoPaso, #imgCard{
+    display: none;
+}
+.container-formulario{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: black 5px 5px 10px;
+
+}
+.container-formulario h2{
+    color: rgb(5, 5, 5);
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 20px;
+}
+.seccion-formulario{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgb(219, 218, 218);
+    border: 3px solid rgb(0, 0, 0);
+    justify-content: flex-start;
+    align-items: center;
+}
+input,select,.segundoPaso{
+    text-align: center;
+    align-items: center;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    font-size: 15px;
+}
+textarea{
+    text-align: center;
+    align-items: center;
+    font-size: 15px;
+}
+#btn-text{
+    height: 30px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
